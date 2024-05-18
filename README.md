@@ -78,6 +78,20 @@ Crea una clase llamada `FlightBooking` con las siguientes variables:
 - Agrega métodos getter y setter públicos para cada variable en la clase `FlightBooking`.
 - Agrega restricciones de clave externa en la clase `FlightBooking` para hacer referencia a `customerId` y `flightId` en las tablas customers y flights respectivamente.
 
+* Os he puesto en código como sería esta relación en JPA (algo de la semana 8), pero en el ejercicio era suficiente con hacer:
+Una vez creadas las entidades, en nuestro schema, en una query console:
+```sql
+ALTER flight_bookings
+ADD CONSTRAINT fk_customer
+FOREIGN KEY (customer_id)
+REFERENCES customers (customer_id);
+
+ALTER flight_bookings
+ADD CONSTRAINT fk_flight
+FOREIGN KEY (flight_id)
+REFERENCES flights (flight_id);
+```
+
 <br>  
 
 ## Tareas
